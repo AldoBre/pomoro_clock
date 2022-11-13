@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temporizador estilo pomodoro">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+    <title>FocusTimer - Pomodoro</title>
+</head>
+<body>
+    <main>
+        <div id="timer">
+            <span class="minutes">01</span>
+            <span>:</span>
+            <span class="seconds">00</span>
+        </div>
+        <div id="controls">
+            <button class="play">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2_2)">
+                    <path d="M30 0C13.4325 0 0 13.4325 0 30C0 46.5675 13.4325 60 30 60C46.5675 60 60 46.5675 60 30C60 13.4325 46.5675 0 30 0ZM30 6.958C42.725 6.958 53.042 17.2751 53.042 30C53.042 42.725 42.725 53.042 30 53.042C17.2751 53.042 6.958 42.725 6.958 30C6.958 17.2751 17.2751 6.958 30 6.958ZM22.5 15.0219V44.978L45 30L22.5 15.0219Z" fill="#699BF7"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_2_2">
+                    <rect width="60" height="60" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>                   
+            </button>
+            <button class="pause hide">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2_12)">
+                    <path d="M30 0.9375C13.9453 0.9375 0.9375 13.9453 0.9375 30C0.9375 46.0547 13.9453 59.0625 30 59.0625C46.0547 59.0625 59.0625 46.0547 59.0625 30C59.0625 13.9453 46.0547 0.9375 30 0.9375ZM30 53.4375C17.0508 53.4375 6.5625 42.9492 6.5625 30C6.5625 17.0508 17.0508 6.5625 30 6.5625C42.9492 6.5625 53.4375 17.0508 53.4375 30C53.4375 42.9492 42.9492 53.4375 30 53.4375ZM41.25 20.625V39.375C41.25 40.4063 40.4063 41.25 39.375 41.25H33.75C32.7187 41.25 31.875 40.4063 31.875 39.375V20.625C31.875 19.5937 32.7187 18.75 33.75 18.75H39.375C40.4063 18.75 41.25 19.5937 41.25 20.625ZM28.125 20.625V39.375C28.125 40.4063 27.2813 41.25 26.25 41.25H20.625C19.5937 41.25 18.75 40.4063 18.75 39.375V20.625C18.75 19.5937 19.5937 18.75 20.625 18.75H26.25C27.2813 18.75 28.125 19.5937 28.125 20.625Z" fill="#699BF7"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_2_12">
+                    <rect width="60" height="60" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    
+            </button>
+            <button class="stop hide">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2_14)">
+                    <path d="M38.4375 18.75H21.5625C20.0156 18.75 18.75 20.0156 18.75 21.5625V38.4375C18.75 39.9844 20.0156 41.25 21.5625 41.25H38.4375C39.9844 41.25 41.25 39.9844 41.25 38.4375V21.5625C41.25 20.0156 39.9844 18.75 38.4375 18.75ZM30 0C13.4297 0 0 13.4297 0 30C0 46.5703 13.4297 60 30 60C46.5703 60 60 46.5703 60 30C60 13.4297 46.5703 0 30 0ZM30 54.375C16.5586 54.375 5.625 43.4402 5.625 30C5.625 16.5598 16.5586 5.625 30 5.625C43.4414 5.625 54.375 16.5598 54.375 30C54.375 43.4402 43.4414 54.375 30 54.375Z" fill="#699BF7"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_2_14">
+                    <rect width="60" height="60" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    
+            </button>
+            <button class="set">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 27.1875V17.8125" stroke="#699BF7" stroke-width="3.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30 10.3125V8.4375M15.4688 15.4688L14.0625 14.0625" stroke="#699BF7" stroke-width="5.625" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30 35.625C32.0711 35.625 33.75 33.9461 33.75 31.875C33.75 29.8039 32.0711 28.125 30 28.125C27.9289 28.125 26.25 29.8039 26.25 31.875C26.25 33.9461 27.9289 35.625 30 35.625Z" stroke="#699BF7" stroke-width="3.75" stroke-miterlimit="10"/>
+                    <path d="M30 11.25C25.9208 11.25 21.9331 12.4596 18.5414 14.7259C15.1496 16.9922 12.506 20.2134 10.945 23.9822C9.38393 27.7509 8.97549 31.8979 9.77131 35.8987C10.5671 39.8996 12.5315 43.5746 15.4159 46.4591C18.3004 49.3435 21.9754 51.3079 25.9763 52.1037C29.9771 52.8995 34.1241 52.4911 37.8928 50.93C41.6616 49.369 44.8828 46.7254 47.1491 43.3336C49.4154 39.9419 50.625 35.9542 50.625 31.875C50.625 26.4049 48.452 21.1589 44.5841 17.2909C40.7161 13.423 35.4701 11.25 30 11.25Z" stroke="#699BF7" stroke-width="3.75" stroke-miterlimit="10"/>
+                    </svg>
+                    
+                    
+            </button>
+        </div>
+    </main>
+
+    <footer>
+       <button class="sound-on">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40.3125 23.4375C40.3125 23.4375 44.0625 25.3125 44.0625 30C44.0625 34.6875 40.3125 36.5625 40.3125 36.5625M44.0625 12.1875C51.5625 15.9375 55.3125 21.5625 55.3125 30C55.3125 38.4375 51.5625 44.0625 44.0625 47.8125M6.5625 21.5625V38.4375H15.9375L30.9375 49.6875V10.3125L15.9375 21.5625H6.5625Z" stroke="#699BF7" stroke-width="5.625" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            
+       </button>
+       <button class="sound-off hide">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M53.4375 21.5625L40.3125 38.4375M40.3125 21.5625L53.4375 38.4375M6.5625 21.5625V38.4375H15.9375L30.9375 49.6875V10.3125L15.9375 21.5625H6.5625Z" stroke="#699BF7" stroke-width="5.625" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        </button>
+    </footer>
+<script src="./js/index.js" type="module"></script>
+</body>
+</html>
